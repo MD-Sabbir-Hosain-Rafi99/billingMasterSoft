@@ -1,11 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Salar Dashboard</title>
+    <title>Saler Dashboard</title>
+    <!-- Tailwind CLI Link Start -->
+    <link rel="stylesheet" href="src/output.css">
+    <!-- Tailwind CLI Link End -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
 </head>
-<body>
-    <h1>Salar Dashboard</h1>
+
+<body class="bg-gray-100 min-h-screen p-4">
+    <!-- Header -->
+    <header class="bg-white shadow p-4 flex justify-between items-center rounded-md">
+        <h1 class="text-2xl font-bold text-gray-700">Saler Dashboard</h1>
+        <span class="text-sm text-gray-500 flex items-center gap-2">
+            <i data-lucide="user" class="w-4 h-4 text-gray-500"></i> Welcome, Saler
+            <button class="btn btn-neutral ml-3">LogOut</button>
+        </span>
+    </header>
+
+    <!-- Summary Cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
+        <div class="bg-white p-4 rounded-md shadow text-center">
+            <h2 class="text-lg font-semibold text-gray-600">Today's Sales</h2>
+            <p class="text-2xl font-bold text-green-600">৳20,500</p>
+        </div>
+        <div class="bg-white p-4 rounded-md shadow text-center">
+            <h2 class="text-lg font-semibold text-gray-600">Weekly Sales</h2>
+            <p class="text-2xl font-bold text-blue-600">৳85,000</p>
+        </div>
+        <div class="bg-white p-4 rounded-md shadow text-center">
+            <h2 class="text-lg font-semibold text-gray-600">Monthly Sales</h2>
+            <p class="text-2xl font-bold text-purple-600">৳320,000</p>
+        </div>
+        <div class="bg-white p-4 rounded-md shadow text-center">
+            <h2 class="text-lg font-semibold text-gray-600">Total Stock Items</h2>
+            <p class="text-2xl font-bold text-red-600">1,200</p>
+        </div>
+    </div>
+
+    <!-- Charts & Stock Section -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6">
+        <!-- Vertical Bar Chart (HTML/CSS Only) -->
+        <div class="bg-white p-6 rounded-md shadow">
+            <h2 class="text-xl font-semibold mb-4 text-gray-700">Product Wise Sales (Bar Chart)</h2>
+            <div class="flex gap-6 items-end h-64">
+                <!-- Product A -->
+                <div class="flex flex-col items-center">
+                    <div class="bg-blue-500 w-10 rounded-t-md h-[190px]"></div>
+                    <span class="mt-2 text-sm font-medium">Product A</span>
+                    <span class="text-xs text-gray-500">120</span>
+                </div>
+                <!-- Product B -->
+                <div class="flex flex-col items-center">
+                    <div class="bg-green-500 w-10 rounded-t-md h-40"></div>
+                    <span class="mt-2 text-sm font-medium">Product B</span>
+                    <span class="text-xs text-gray-500">90</span>
+                </div>
+                <!-- Product C -->
+                <div class="flex flex-col items-center">
+                    <div class="bg-yellow-500 w-10 rounded-t-md h-[200px]"></div>
+                    <span class="mt-2 text-sm font-medium">Product C</span>
+                    <span class="text-xs text-gray-500">150</span>
+                </div>
+                <!-- Product D -->
+                <div class="flex flex-col items-center">
+                    <div class="bg-red-500 w-10 rounded-t-md h-[120px]"></div>
+                    <span class="mt-2 text-sm font-medium">Product D</span>
+                    <span class="text-xs text-gray-500">80</span>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Product Stock List -->
+        <div class="bg-white p-6 rounded-md shadow">
+            <h2 class="text-xl font-semibold mb-4 text-gray-700">Current Stock</h2>
+            <ul class="divide-y divide-gray-200 max-h-64 overflow-auto">
+                <li class="py-2 flex justify-between"><span>Product A</span><span>100 pcs</span></li>
+                <li class="py-2 flex justify-between"><span>Product B</span><span>80 pcs</span></li>
+                <li class="py-2 flex justify-between"><span>Product C</span><span>150 pcs</span></li>
+                <li class="py-2 flex justify-between"><span>Product D</span><span>60 pcs</span></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <!-- Product Entry Form -->
+    <div class="bg-white p-6 rounded-md shadow mt-6">
+        <h2 class="text-xl font-semibold mb-4 text-gray-700">Add Product to Stock</h2>
+        <form class="grid grid-cols-1 md:grid-cols-3 gap-2">
+            <input type="text" placeholder="Product Name" class="p-2 border rounded-md" required />
+            <input type="number" placeholder="Quantity" class="p-2 border rounded-md" required />
+            <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold p-2 rounded-md">Add
+                Product</button>
+        </form>
+    </div>
+
+    <!-- Product Invoice History -->
+    <div class="bg-white p-6 rounded-md shadow mt-6">
+        <h2 class="text-xl font-semibold mb-4 text-gray-700">Invoice Details</h2>
+        <form class="grid grid-cols-1 md:grid-cols-7 gap-4">
+            <input type="text" placeholder="Enter Phone Number" class="p-2 border rounded-md" required />
+            <button type="submit"
+                class="bg-blue-600 w-50  hover:bg-blue-700 text-white font-bold p-2 rounded-md">Invoice History</button>
+            <button type="submit"
+                class="bg-green-500 w-50 hover:bg-blue-700 text-white font-bold p-2 rounded-md">Today's Sales</button>
+            <button type="submit" class="bg-blue-700 w-50 hover:bg-blue-400 text-white font-bold p-2 rounded-md">Weekly
+                Sales</button>
+            <button type="submit"
+                class="bg-purple-600 w-50 hover:bg-blue-700 text-white font-bold p-2 rounded-md">Monthly Sales</button>
+        </form>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
+
 </html>
