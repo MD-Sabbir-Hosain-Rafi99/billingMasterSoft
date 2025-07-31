@@ -23,7 +23,7 @@ let salarBtn = document.getElementById('salarBtn');
 
 salarBtn.addEventListener('click', (event) =>{
     event.preventDefault();
-    if (salarUserName.value == 'salar' && salarPass.value == '123') {
+    if (salarUserName.value == 'saler' && salarPass.value == '123') {
         window.location.href = "salesman.html"
     }else{
         alert("Wrong")
